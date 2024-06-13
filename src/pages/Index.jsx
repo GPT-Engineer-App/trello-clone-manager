@@ -99,6 +99,9 @@ const Index = () => {
   };
 
   const handleAddCardClick = (columnId) => {
+    if (editingCard) {
+      saveEditedCard();
+    }
     setShowInput({ ...showInput, [columnId]: true });
     setEditingCard(null);
   };
