@@ -80,7 +80,7 @@ const Index = () => {
   };
 
   const addCardToColumn = (columnId, newCardText, newCardDetails) => {
-    if (newCardText.trim() === "") return;
+    if (newCardText.trim() === "" || editingCard) return;
     const newCard = { id: `${new Date().getTime()}`, content: newCardText, details: newCardDetails };
     setColumns({
       ...columns,
