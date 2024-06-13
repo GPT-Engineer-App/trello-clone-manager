@@ -80,11 +80,7 @@ const Index = () => {
   };
 
   const addCardToColumn = (columnId, newCardText, newCardDetails) => {
-    if (newCardText.trim() === "") return;
-    if (editingCard) {
-      saveEditedCard();
-      return;
-    }
+    if (newCardText.trim() === "" || editingCard) return;
     const newCard = { id: `${new Date().getTime()}`, content: newCardText, details: newCardDetails };
     setColumns({
       ...columns,
@@ -141,8 +137,6 @@ const Index = () => {
     });
     setEditingCard(null);
     setShowInput({ ...showInput, [columnId]: false });
-    setNewCardText("");
-    setNewCardDetails("");
   };
 
   const cancelEditing = () => {
