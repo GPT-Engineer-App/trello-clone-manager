@@ -80,7 +80,7 @@ const Index = () => {
   };
 
   const addCardToColumn = (columnId, newCardText, newCardDetails) => {
-    if (newCardText.trim() === "") return;
+    if (newCardText.trim() === "" || editingCard) return;
     const newCard = { id: `${new Date().getTime()}`, content: newCardText, details: newCardDetails };
     setColumns({
       ...columns,
@@ -224,6 +224,7 @@ const Index = () => {
                       </Box>
                     ) : (
                       <Button leftIcon={<FaPlus />} colorScheme="blue" variant="outline" mt={4} onClick={() => handleAddCardClick(columnId)}>
+                        Add Card
                       </Button>
                     )}
                   </Box>
