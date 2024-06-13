@@ -103,6 +103,7 @@ const Index = () => {
     setShowInput({ ...showInput, [columnId]: false });
     setNewCardText("");
     setNewCardDetails("");
+    setEditingCard(null);
   };
 
   const handleCardClick = (columnId, cardId) => {
