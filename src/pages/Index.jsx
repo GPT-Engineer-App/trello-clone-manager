@@ -103,6 +103,7 @@ const Index = () => {
     setShowInput({ ...showInput, [columnId]: false });
     setNewCardText("");
     setNewCardDetails("");
+    setEditingCard(null);
   };
 
   const handleCardClick = (columnId, cardId) => {
@@ -133,6 +134,8 @@ const Index = () => {
     });
     setEditingCard(null);
     setShowInput({ ...showInput, [columnId]: false });
+    setNewCardText("");
+    setNewCardDetails("");
   };
 
   const cancelEditing = () => {
